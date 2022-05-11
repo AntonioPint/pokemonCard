@@ -1,0 +1,109 @@
+:root{
+    --cardWidth: 250px;
+    --cardHeight: 350px;
+    --cardBorder: 10px;
+    /* --cardbackground: linear-gradient(#ffc861, rgb(255, 217, 0)) ; */
+    --cardbackground: url("../img/clouds.png");
+}
+
+.gameCard{
+    margin: auto;
+    height: var(--cardHeight);
+    width: var(--cardWidth);
+    padding: 100px 200px;
+    border: 1px solid black;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.cardFace{
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px; 
+    transition-duration: 0.1s;
+}
+
+.cardFace::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--cardBorder); 
+    padding: var(--cardBorder); 
+    background: linear-gradient(45deg,rgb(235, 154, 4),rgb(245, 248, 60)); 
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask:
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;  
+}
+
+.cardFront{
+    background: var(--cardbackground);
+}
+
+.cardBack{
+    background: url("../img/cardVerse.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.cardBack::before{
+    background: linear-gradient(45deg,rgb(130, 195, 248),rgb(22, 6, 167)); 
+}
+
+
+.characterImage{
+    display: flex;
+    margin: auto;
+    width: 75%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    border: 5px solid rgb(253, 187, 6);
+    border-left: 5px solid rgb(224, 167, 10);
+    border-right: 5px solid rgb(235, 175, 12);
+    border-radius: 5px;
+}
+
+.cardTop{
+    width: 75%;
+    margin: auto;
+    padding-top: 10px;
+    text-align: start;
+}
+
+.characterName{
+    font-weight: 700;
+    font-size: larger;
+}
+
+.topCardTop{
+    font-size: small;
+}
+
+.lowerCardTop{
+    display: flex;
+    justify-content:space-between ;
+}
+
+.cardHp{
+    color: red;
+    font-weight: 500;
+}
+
+.characterType{
+    width: 18px;
+}
+
+.characterStatus{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 70px;
+}
+
+.backImage{
+    width: -webkit-fill-available;
+}
