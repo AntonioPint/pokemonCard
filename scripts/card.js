@@ -1,8 +1,8 @@
 let constrain = 150;
-let mouseOverContainer = document.getElementById("ex1");
-let ex1Layer = document.getElementById("ex1-layer");
-let ex1Layer2 = document.getElementById("ex1-layer2");
-let layer = ex1Layer; 
+let mouseOverContainer = document.getElementById("card1");
+let card1Layer = document.getElementById("card1-layer");
+let card1Layer2 = document.getElementById("card1-layer2");
+let layer = card1Layer; 
 let cardFlipped = false
 
 function transforms(x, y, el) {
@@ -11,6 +11,7 @@ function transforms(x, y, el) {
     let calcY = (x - box.x - (box.width / 2)) / constrain * 2;
 
     if(cardFlipped) calcY = 180 - calcY;
+
     return "perspective(100px) "
         + "   rotateX(" + calcX + "deg) "
         + "   rotateY(" + calcY + "deg) ";
@@ -36,7 +37,7 @@ mouseOverContainer.onclick = (e) => {
 
     cardFlipped = !cardFlipped
     
-    layer = !cardFlipped ? ex1Layer : ex1Layer2;
+    layer = !cardFlipped ? card1Layer : card1Layer2;
 }
 
 mouseOverContainer.onmouseleave = (e) =>{

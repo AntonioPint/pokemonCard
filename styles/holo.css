@@ -1,0 +1,41 @@
+  .holo:before,
+  .holo:after {
+    content: "";
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background-repeat: no-repeat;
+    transition: all .33s ease;
+  }
+  
+  .holo:before {
+    background-position: 50% 50%;
+    background-size: 300% 300%;
+    z-index: 1;
+  }
+  
+  .holo:after {
+    opacity: 1;
+    background-image: url("../img/sparkles.gif"), 
+      url("../img/holoSpots.png"), 
+      linear-gradient(125deg, #ff008450 15%, #fca40040 30%, #ffff0030 40%, #00ff8a20 60%, #00cfff40 70%, #cc4cfa50 85%);
+    background-position: 50% 50%;
+    background-size: 160%;
+    background-blend-mode: overlay;
+    filter: brightness(1) contrast(1);
+    transition: all .33s ease;
+    mix-blend-mode: color-dodge;
+    opacity: .75;
+  }
+  
+  .holo.active:before,
+  .holo:hover:before,
+  .holo.active:after,
+  .holo:hover:after {
+    animation: none;
+    transition: none;
+  }
+  
