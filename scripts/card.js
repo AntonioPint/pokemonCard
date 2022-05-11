@@ -1,4 +1,4 @@
-let constrain = 150;
+let constrain = {x: 150, y: 100};
 let mouseOverContainer = document.getElementById("card1");
 let card1Layer = document.getElementById("card1-layer");
 let card1Layer2 = document.getElementById("card1-layer2");
@@ -6,9 +6,12 @@ let layer = card1Layer;
 let cardFlipped = false
 
 function transforms(x, y, el) {
+    if(constrain.x == 0){ constrain.x = 200}
+    if(constrain.y == 0){ constrain.y = 200}
+
     let box = el.getBoundingClientRect();
-    let calcX = -(y - box.y - (box.height / 2)) / constrain;
-    let calcY = (x - box.x - (box.width / 2)) / constrain * 2;
+    let calcX = -(y - box.y - (box.height * 0.5)) / constrain.x;
+    let calcY = (x - box.x - (box.width * 0.5)) / constrain.y;
 
     if(cardFlipped) calcY = 180 - calcY;
 
@@ -32,11 +35,8 @@ mouseOverContainer.onmousemove = function (e) {
 
 mouseOverContainer.onclick = (e) => {
     let frontCard = document.getElementsByClassName("flip-card-inner")[0]
-   
     cardFlipped ? frontCard.style.transform = "" : frontCard.style.transform = "rotateY(180deg)";
-
     cardFlipped = !cardFlipped
-    
     layer = !cardFlipped ? card1Layer : card1Layer2;
 }
 
@@ -53,12 +53,8 @@ mouseOverContainer.onmouseleave = (e) =>{
 }
 
 mouseOverContainer.addEventListener("keypress", function(event) {
-    // If the user presses the "Enter" key on the keyboard
     if (event.key === "Enter") {
-      // Cancel the default action, if needed
       event.preventDefault();
-      // Trigger the button element with a click
       mouseOverContainer.click();
-      //document.getElementById("myBtn").click();
     }
-  });
+});
