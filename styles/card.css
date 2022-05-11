@@ -10,10 +10,10 @@
     margin: auto;
     height: var(--cardHeight);
     width: var(--cardWidth);
-    padding: 100px 200px;
-    border: 1px solid black;
+    /* padding: 100px 200px; */
     -webkit-user-select: none;
     user-select: none;
+    outline: none;
 }
 
 .cardFace{
