@@ -3,7 +3,8 @@
     --cardHeight: 350px;
     --cardBorder: 10px;
     /* --cardbackground: linear-gradient(#ffc861, rgb(255, 217, 0)) ; */
-    --cardbackground: url("../img/clouds.png");
+    --cardbackground: url("../img/orange-card-background.png");
+    --cardBack: url("../img/cardVerse.png");
 }
 
 .gameCard{
@@ -17,8 +18,8 @@
 }
 
 .cardFace{
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
     border-radius: 10px; 
     transition-duration: 0.1s;
 }
@@ -45,9 +46,7 @@
 }
 
 .cardBack{
-    background: url("../img/cardVerse.png");
-    background-repeat: no-repeat;
-    background-size: contain;
+    background: var(--cardBack);
 }
 
 .cardBack::before{
