@@ -1,10 +1,11 @@
 :root{
-    --cardWidth: 250px;
-    --cardHeight: 350px;
+    --cardWidth: 400px;
+    --cardHeight: 250px;
     --cardBorder: 10px;
-    /* --cardbackground: linear-gradient(#ffc861, rgb(255, 217, 0)) ; */
-    --cardbackground: url("../img/orange-card-background.png");
-    --cardBack: url("../img/cardVerse.png");
+    --cardFrontBackground: url("../img/creditCardFront.png");
+    --cardBackBackground: url("../img/creditCardVerse.png");
+    /* --cardFrontBorder: linear-gradient(45deg,rgb(235, 154, 4),rgb(245, 248, 60)); ;
+    --cardBackBorder: linear-gradient(45deg,rgb(130, 195, 248),rgb(22, 6, 167)); */
 }
 
 .gameCard{
@@ -30,7 +31,7 @@
     inset: 0;
     border-radius: var(--cardBorder); 
     padding: var(--cardBorder); 
-    background: linear-gradient(45deg,rgb(235, 154, 4),rgb(245, 248, 60)); 
+    background: var(--cardFrontBorder);
     -webkit-mask: 
         linear-gradient(#fff 0 0) content-box, 
         linear-gradient(#fff 0 0);
@@ -42,15 +43,15 @@
 }
 
 .cardFront{
-    background: var(--cardbackground);
+    background: var(--cardFrontBackground);
 }
 
 .cardBack{
-    background: var(--cardBack);
+    background: var(--cardBackBackground);
 }
 
 .cardBack::before{
-    background: linear-gradient(45deg,rgb(130, 195, 248),rgb(22, 6, 167)); 
+    background: var(--cardBackBorder);
 }
 
 .characterImage{
