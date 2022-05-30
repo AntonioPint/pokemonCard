@@ -1,11 +1,11 @@
 :root{
-    --cardWidth: 400px;
-    --cardHeight: 250px;
+    --cardWidth: 750px;
+    --cardHeight: 1050px;
     --cardBorder: 10px;
-    --cardFrontBackground: url("../img/creditCardFront.png");
-    --cardBackBackground: url("../img/creditCardVerse.png");
-    /* --cardFrontBorder: linear-gradient(45deg,rgb(235, 154, 4),rgb(245, 248, 60)); ;
-    --cardBackBorder: linear-gradient(45deg,rgb(130, 195, 248),rgb(22, 6, 167)); */
+    --cardFrontBackground: url("../img/purple-card-background.png");
+    --cardBackBackground: url("../img/cardVerse.png");
+    --cardFrontBorder: linear-gradient(45deg,rgb(235, 154, 4),rgb(245, 248, 60)); ;
+    --cardBackBorder: linear-gradient(45deg,rgb(130, 195, 248),rgb(22, 6, 167)); 
 }
 
 .gameCard{

@@ -1,4 +1,4 @@
-let constrain = {x: 150, y: 100};
+let constrain = {x: 250, y: 200};
 let mouseOverContainer = document.getElementById("card1");
 let card1Layer = document.getElementById("card1-layer");
 let card1Layer2 = document.getElementById("card1-layer2");
@@ -12,7 +12,8 @@ function transforms(x, y, el) {
     let box = el.getBoundingClientRect();
     let calcX = -(y - box.y - (box.height * 0.5)) / constrain.x;
     let calcY = (x - box.x - (box.width * 0.5)) / constrain.y;
-
+    //FIXME: When cursor is in image the angles are too agressive
+    
     if(cardFlipped) calcY = 180 - calcY;
 
     return "perspective(100px) "
